@@ -22,38 +22,38 @@ export default TaskItem = (props) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        marginHorizontal: 20,
+        marginHorizontal: 100,
     },
     indexContainer: {
-        backgroundColor: '#3E3364',
+        backgroundColor: '#fff',
         borderRadius: 12,
-        marginRight: 10,
+        marginRight: 5,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 50,
-        height: 50,
+        width: 25,
+        height: 25,
     },
     index: {
-        color: '#fff',
-        fontSize: 20,
+        color: '#000',
+        fontSize: 12,
     },
     taskContainer: {
-        backgroundColor: '#3E3364',
-        borderRadius: 12,
+        backgroundColor: '#fff',
+        borderRadius: 6,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         flex: 1,
-        paddingHorizontal: 10,
+        paddingHorizontal: 50,
         paddingVertical: 5,
-        minHeight: 50,
+        
     },
     task: {
-        color: '#fff',
-        width: '90%',
-        fontSize: 16,
+        color: '#000',
+        width: 100,
+        fontSize: 12,
     },
     delete: {
-        marginLeft: 10,
+        marginLeft: 2,
     },
 });

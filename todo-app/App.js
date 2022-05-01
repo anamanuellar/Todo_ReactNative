@@ -1,4 +1,6 @@
-import { StyleSheet, Text, View, Keyboard, ScrollView } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, Keyboard, ScrollView, StatusBar } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import TaskItem from './components/TaskItem';
 import TaskInputField from './components/TaskInputField'
 
@@ -16,8 +18,14 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-        <Text style={styles.heading}>TODO LIST</Text>
+    <>
+        <View style={styles.container}>
+        <LinearGradient
+        // Background Linear Gradient
+        colors={['rgba(0,0,0,0.6)', 'transparent']}
+        style={styles.background}
+      />
+        <Text style={styles.title}>TODO LIST</Text>
       <ScrollView style={styles.scrollView}>
         {
         tasks.map((task, index) => {
@@ -30,17 +38,25 @@ export default function App() {
       }
       </ScrollView>
       <TaskInputField addTask={addTask}/>
+      <StatusBar style={'auto'} />
     </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fefefe',
-    backgroundImage: 'linear-gradient(#fc6c48 0%, #ef5081 100%)',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'orange', 
+  },
+  background: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 300,
   },
   title: {
     color: '#fff',
